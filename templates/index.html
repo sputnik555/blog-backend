@@ -3,7 +3,6 @@
 {% block title %}Sensive Blog - Home{% endblock %}
 {% block content %}
   <!--================Header Menu Area =================-->
-
   <main class="site-main">
     <!--================Hero Banner start =================-->
     <section class="mb-30px">
@@ -28,9 +27,9 @@
             <div class="card blog__slide text-center">
               <div class="blog__slide__img">
                 {% if post.image_url %}
-                  <img class="card-img rounded-0" src="{{post.image_url}}" alt="post image">
+                <img class="card-img rounded-0" src="{{post.image_url}}" alt="post image">
                 {% else %}
-                  <img class="img-fluid" src="{% static 'img/blog.png' %}" alt="post image">
+                <img class="img-fluid" src="{% static 'img/blog.png' %}" alt="post image">
                 {% endif %}
               </div>
               <div class="blog__slide__content">
@@ -51,29 +50,27 @@
         <div class="row">
           <div class="col-lg-8">
             {% for post in fresh_posts %}
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  {% if post.image_url %}
-                    <img class="img-fluid" src="{{post.image_url}}" alt="post image">
-                  {% else %}
-                    <img class="img-fluid" src="{% static 'img/blog.png' %}" alt="post image">
-                  {% endif %}
-                  <ul class="thumb-info" style="max-width: 550px;">
-                    <li><a href="#"><i class="ti-user"></i>{{post.author}}</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>{{post.comments_amount}} Comments</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                  <h3>{{post.title}}</h3>
-                  <p>{{post.text|truncatechars:200}}</p>
-                  <a class="button" href="{% url 'post_detail' slug=post.slug %}">Read More <i class="ti-arrow-right"></i></a>
-                </div>
+            <div class="single-recent-blog-post">
+              <div class="thumb">
+                {% if post.image_url %}
+                <img class="img-fluid" src="{{post.image_url}}" alt="post image">
+                {% else %}
+                <img class="img-fluid" src="{% static 'img/blog.png' %}" alt="post image">
+                {% endif %}
+                <ul class="thumb-info" style="max-width: 550px;">
+                  <li><a href="#"><i class="ti-user"></i>{{post.author}}</a></li>
+                  <li><a href="#"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
+                  <li><a href="#"><i class="ti-themify-favicon"></i>{{post.comments_amount}} Comments</a></li>
+                </ul>
               </div>
+              <div class="details mt-20">
+                <h3>{{post.title}}</h3>
+                <p>{{post.text|truncatechars:200}}</p>
+                <a class="button" href="{% url 'post_detail' slug=post.slug %}">Read More <i
+                  class="ti-arrow-right"></i></a>
+              </div>
+            </div>
             {% endfor %}
-
-
-
 
 
             <div class="row">
@@ -82,18 +79,18 @@
                   <ul class="pagination">
                     <li class="page-item">
                       <a href="#" class="page-link" aria-label="Previous">
-                        <span aria-hidden="true">
-                          <i class="ti-angle-left"></i>
-                        </span>
+                          <span aria-hidden="true">
+                            <i class="ti-angle-left"></i>
+                          </span>
                       </a>
                     </li>
                     <li class="page-item active"><a href="#" class="page-link">1</a></li>
                     <li class="page-item"><a href="#" class="page-link">2</a></li>
                     <li class="page-item">
                       <a href="#" class="page-link" aria-label="Next">
-                        <span aria-hidden="true">
-                          <i class="ti-angle-right"></i>
-                        </span>
+                          <span aria-hidden="true">
+                            <i class="ti-angle-right"></i>
+                          </span>
                       </a>
                     </li>
                   </ul>
@@ -109,8 +106,9 @@
                 <h4 class="single-sidebar-widget__title">Newsletter</h4>
                 <div class="form-group mt-30">
                   <div class="col-autos">
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email'">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email"
+                           onfocus="this.placeholder = ''"
+                           onblur="this.placeholder = 'Enter email'">
                   </div>
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
@@ -126,6 +124,6 @@
         </div>
       </div>
     </section>
-    <!--================ End Blog Post Area =================-->
+  <!--================ End Blog Post Area =================-->
   </main>
 {% endblock %}
